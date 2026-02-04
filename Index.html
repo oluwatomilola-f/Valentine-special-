@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Be My Valentine 💜</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Comic Sans MS', 'Poppins', cursive;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: lavender;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      background: #f7e9ff;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(128, 0, 128, 0.2);
+      max-width: 400px;
+      width: 90%;
+    }
+
+    h1 {
+      color: #6a0dad;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #4b0082;
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      position: relative;
+      height: 120px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.2s;
+      position: absolute;
+    }
+
+    #yesBtn {
+      background: #9b5de5;
+      color: white;
+      left: 50%;
+      transform: translateX(-120%);
+    }
+
+    #noBtn {
+      background: #d8b4fe;
+      color: #4b0082;
+      left: 50%;
+      transform: translateX(20%);
+    }
+
+    #yesBtn:hover {
+      background: #7b2cbf;
+    }
+
+    .success {
+      display: none;
+      color: #6a0dad;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Hey You 💜</h1>
+    <p>
+      I’ve been thinking…<br>
+      Life is already hard, so why not make it cuter?<br><br>
+      Will you be my Valentine? 🥺💐
+    </p>
+
+    <div class="buttons">
+      <button id="yesBtn">YES 💖</button>
+      <button id="noBtn">No 🙄</button>
+    </div>
+
+    <h2 class="success">YAYYY 😍💜  
+      <br>You just made me the happiest person alive 💐
+    </h2>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+    const successText = document.querySelector(".success");
+
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * 250 - 125;
+      const y = Math.random() * 80 - 40;
+
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+    yesBtn.addEventListener("click", () => {
+      document.querySelector(".buttons").style.display = "none";
+      successText.style.display = "block";
+    });
+  </script>
+
+</body>
+</html>
